@@ -80,30 +80,30 @@
         <input type="text" id="textForm">
         <button id="button">実行</button>
       </form>
-      //<label for="resultForm">取得した値: </label>
-      //<input type="text" id="resultForm">
-</body>
 <script>
-    // ボタンの要素を取得
-var button = document.getElementById("button");
- 
-// ボタンをクリックした時の処理
-button.addEventListener("click", function(e) {
- 
-    e.preventDefault();
- 
-    // 入力フォームの値を取得
-    //var textForm = document.getElementById("textForm").value;
- 
-    // 取得した値を別の入力フォームに表示
-    //var resultForm = document.getElementById("resultForm");
-    //resultForm.value = textForm;
-    var textForm = document.getElementById("textForm").value;
-    alert(textForm);
-});
- 
     // //以下は、ローカルストレージをすべてクリアするための管理用コード
     // // ボタンの要素を取得
+    var button = document.getElementById("button");
+     // ボタンをクリックした時の処理
+    button.addEventListener("click", function(e) {
+            e.preventDefault();
+            var pass = document.getElementById("textForm").value;
+            if(pass=="12345"){
+                var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
+                if(result){
+                    if(window.localStorage){
+                        localStrage.clear();
+                        alert('スタンプ帳のスタンプはすべて破棄されました。');
+                    }
+                }
+                else{
+                    alert('この処理はキャンセルされましt。');
+                }
+            }else
+                alert('パスワードが間違っています。');
+            }
+    });
+ 
     // var button = document.getElementById('button');
     // // ボタンをクリックした時の処理
     // button.addEventListener('click', function(e) {
@@ -113,20 +113,6 @@ button.addEventListener("click", function(e) {
     //             resaultForm.value=pass;        
     //     //alert(pass);
     //     document.getElementById("pwdreset").value=""
-    //     if(pass=="12345"){
-    //         var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
-    //         if(result){
-    //             if(window.localStorage){
-    //                 localStrage.clear();
-    //                 alert('スタンプ帳のスタンプはすべて破棄されました。');
-    //             }
-    //         }
-    //         else{
-    //             alert('この処理はキャンセルされましt。');
-    //         }
-    //     }else
-    //         alert('パスワードが間違っています。');
-    //     }
             
     // }); 
 </script>
