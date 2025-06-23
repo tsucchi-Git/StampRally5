@@ -80,21 +80,20 @@
         <input type="text" id="pwdreset">
         <button id="button">実行</button>
       </form>
+      <label for="resultForm">取得した値: </label>
 </body>
 <script>
     //以下は、ローカルストレージをすべてクリアするための管理用コード
     // ボタンの要素を取得
-var pass = document.getElementById('pwdreset').value;
-                alert(pass);
     var button = document.getElementById('button');
     // ボタンをクリックした時の処理
     button.addEventListener('click', function(e) {
-                var pass = document.getElementById('pwdreset').value;
+                var pass = document.getElementById('resultForm').value;
                 alert(pass);
         e.preventDefault();
         // 入力フォームの値を取得
-        var pass = document.getElementById("pwdreset").value;
-        alert(pass);
+                var pass = document.getElementById('resultForm').value;
+                alert(pass);
         document.getElementById("pwdreset").value=""
         if(pass=="12345"){
             var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
