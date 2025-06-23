@@ -88,23 +88,23 @@
     button.addEventListener("click", function(e) {
             e.preventDefault();
             var pass = document.getElementById("textForm").value;
-            //alert(pass);
-            if(pass=='12345'){
-                alert('パスはOK'+ area_no%);
-                var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
-                if(result){
-                    if(window.localStorage){
-                        localStorage.removeItem('visit_data%'+area_no%);
-                        alert('スタンプ帳のスタンプはすべて破棄されました。');
-                        //pass.value=""
-                    }
-                }
-                else{
-                    alert('この処理はキャンセルされましt。');
-                }
-            }else{
-                alert('パスワードが間違っています。');
-            }
+            alert(pass);
+            // if(pass=='12345'){
+            //     alert('パスはOK'+ area_no%);
+            //     var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
+            //     if(result){
+            //         if(window.localStorage){
+            //             localStorage.removeItem('visit_data%'+area_no%);
+            //             alert('スタンプ帳のスタンプはすべて破棄されました。');
+            //             //pass.value=""
+            //         }
+            //     }
+            //     else{
+            //         alert('この処理はキャンセルされましt。');
+            //     }
+            // }else{
+            //     alert('パスワードが間違っています。');
+            // }
     });
  
     // var button = document.getElementById('button');
