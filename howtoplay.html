@@ -76,11 +76,12 @@
       　すでにゲットしてるすべてのスタンプを破棄してリセットします。
       </p>
       <form>
-        <label for="textForm">パスワード: </label>
+        <label for="pwdreset">パスワード: </label>
         <input type="text" id="pwdreset">
         <button id="button">実行</button>
       </form>
       <label for="resultForm">取得した値: </label>
+      <input type="text" id="resultForm">
 </body>
 <script>
     //以下は、ローカルストレージをすべてクリアするための管理用コード
@@ -88,12 +89,11 @@
     var button = document.getElementById('button');
     // ボタンをクリックした時の処理
     button.addEventListener('click', function(e) {
-                var pass = document.getElementById('resultForm').value;
-                alert(pass);
         e.preventDefault();
         // 入力フォームの値を取得
                 var pass = document.getElementById('resultForm').value;
-                alert(pass);
+                resaultForm.value=pass;        
+        //alert(pass);
         document.getElementById("pwdreset").value=""
         if(pass=="12345"){
             var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
