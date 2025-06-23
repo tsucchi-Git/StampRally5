@@ -100,6 +100,7 @@
             		    //現在の訪問記録の読み込み
                          key_visit='visit_data%' + area_no;
                          let json_visit=localStorage.getItem(ket_visit);
+                        alert(ket_visit);
                          visit_yn_temp=JSON.parse(json_visit);
                          alert(visit_yn_temp.length);
                  //        //「visit_data」というキーでローカルストレージが使われている場合は何もしない。使われていない場合は、すべてのスポットを未訪問として、各スポットへの訪問を無（初期設定）としてJSONデータに変換し、vist_ysという配列に格納する。
