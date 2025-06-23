@@ -90,7 +90,7 @@
             var pass = document.getElementById("textForm").value;
             //alert(pass);
             if(pass=='12345'){
-                //alert('パスはOK');
+                alert('パスはOK'+ area_no%);
                 var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
                 if(result){
                     if(window.localStorage){
