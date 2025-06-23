@@ -91,16 +91,16 @@
             alert(pass);
             if(pass=='12345'){
                 alert('パスはOK');
-                // var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
-                // if(result){
-                //     if(window.localStorage){
-                //         localStrage.clear();
-                //         alert('スタンプ帳のスタンプはすべて破棄されました。');
-                //     }
-                // }
-                // else{
-                //     alert('この処理はキャンセルされましt。');
-                // }
+                var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
+                if(result){
+                    if(window.localStorage){
+                        localStrage.clear();
+                        alert('スタンプ帳のスタンプはすべて破棄されました。');
+                    }
+                }
+                else{
+                    alert('この処理はキャンセルされましt。');
+                }
             }else{
                 alert('パスワードが間違っています。');
             }
