@@ -34,6 +34,15 @@
         margin-top: 10px;
         text-align:center;
       }         /* 遊び方の画像 */
+      .title-reset{
+        margin-top: 30px; 
+        border: 1px dotted yellow;  
+        background-color:gray; 
+        color: black;
+        text-align: center;
+        line-height:5vh;
+        font-size:150%;
+      }
     </style>
   </head>
   <body>
@@ -68,12 +77,9 @@
       </p>
       <form>
         <label for="textForm">パスワード: </label>
-        <input type="text" id="pwdreset">
+        <input type="text" id="pwd-reset">
         <button id="button">実行</button>
       </form>
- 
-    <label for="resultForm">取得した値: </label>
-    <input type="text" id="resultForm">
 </body>
 <script>
     //以下は、ローカルストレージをすべてクリアするための管理用コード
@@ -83,9 +89,9 @@
     button.addEventListener("click", function(e) {
         e.preventDefault();
         // 入力フォームの値を取得
-        var pass = document.getElementById("resultForm").value;
+        var pass = document.getElementById("pwd-reset").value;
         alert(pass);
-        document.getElementById("resultForm").value=""
+        document.getElementById("pwd-reset").value=""
     }); 
 </script>
 </html>
