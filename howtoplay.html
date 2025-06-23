@@ -76,7 +76,7 @@
       　すでにゲットしてるすべてのスタンプを破棄してリセットします。
       </p>
       <form>
-        <label for="textForm">パスワード1: </label>
+        <label for="textForm">パスワード: </label>
         <input type="text" id="textForm">
         <button id="button">実行</button>
       </form>
@@ -89,20 +89,21 @@
             e.preventDefault();
             var pass = document.getElementById("textForm").value;
             alert(pass);
-            // if(pass=="12345"){
-            //     var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
-            //     if(result){
-            //         if(window.localStorage){
-            //             localStrage.clear();
-            //             alert('スタンプ帳のスタンプはすべて破棄されました。');
-            //         }
-            //     }
-            //     else{
-            //         alert('この処理はキャンセルされましt。');
-            //     }
-            // }else
-            //     alert('パスワードが間違っています。');
-            // }
+            if(pass=="12345"){
+                var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
+                alert(pass);
+                if(result){
+                    if(window.localStorage){
+                        localStrage.clear();
+                        alert('スタンプ帳のスタンプはすべて破棄されました。');
+                    }
+                }
+                else{
+                    alert('この処理はキャンセルされましt。');
+                }
+            }else
+                alert('パスワードが間違っています。');
+            }
     });
  
     // var button = document.getElementById('button');
