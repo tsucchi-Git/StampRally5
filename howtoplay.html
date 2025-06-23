@@ -90,20 +90,23 @@
             var pass = document.getElementById("textForm").value;
             alert(pass);
             if(pass=='12345'){
-                 alert('パスはOK');
-            //     var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
-            //     if(result){
-            //         if(window.localStorage){
-            //             localStorage.removeItem('visit_data%'+area_no%);
-            //             alert('スタンプ帳のスタンプはすべて破棄されました。');
-            //             //pass.value=""
-            //         }
-            //     }
-            //     else{
-            //         alert('この処理はキャンセルされましt。');
-            //     }
-            // }else{
-            //     alert('パスワードが間違っています。');
+                alert('パスはOK');
+                var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
+                if(result){
+                    if(window.localStorage){
+                        //エリア番号の読み取り
+              　　      let area_no=localStorage.getItem('area_no%');
+                        //ローカルストレージ訪問記録のクリア
+                        localStorage.removeItem('visit_data%'+area_no);
+                        alert('スタンプ帳のスタンプはすべて破棄されました。');
+                        //pass.value=""
+                    }
+                }
+                else{
+                    alert('この処理はキャンセルされましt。');
+                }
+            }else{
+                alert('パスワードが間違っています。');
              }
     });
  
