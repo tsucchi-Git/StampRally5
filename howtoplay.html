@@ -73,11 +73,11 @@
       </p>
       <div class="title-reset">リセット（管理者用）</div>
       <p calss="text-explain">
-      　すでにゲットしてるすべてのスタンプをすべて破棄してリセットします。
+      　すでにゲットしてるすべてのスタンプを破棄してリセットします。
       </p>
       <form>
         <label for="textForm">パスワード: </label>
-        <input type="text" id="pwd-reset">
+        <input type="text" id="pwdreset">
         <button id="button">実行</button>
       </form>
 </body>
@@ -89,9 +89,9 @@
     button.addEventListener("click", function(e) {
         e.preventDefault();
         // 入力フォームの値を取得
-        var pass = document.getElementById("pwd-reset").value;
+        var pass = document.getElementById("pwdreset").value;
         alert(pass);
-        document.getElementById("pwd-reset").value=""
+        document.getElementById("pwdreset").value=""
         if(pass=='12345'){
             var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
             if(result){
