@@ -94,7 +94,7 @@
                 var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
                 if(result){
                     if(window.localStorage){
-                        localStorage.clear();
+                        localStorage.removeItem('visit_data%'+area_no%);
                         alert('スタンプ帳のスタンプはすべて破棄されました。');
                         pass.value=""
                     }
