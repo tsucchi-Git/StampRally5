@@ -98,7 +98,7 @@
               　　      let area_no=localStorage.getItem('area_no%');
                         alert(area_no);
             		    //現在の訪問記録の読み込み
-                         key_visit='visit_data%' + area_no;
+                         let key_visit='visit_data%' + area_no;
                          alert(ket_visit);
                          let json_visit=localStorage.getItem(ket_visit);
                          visit_yn_temp=JSON.parse(json_visit);
