@@ -92,6 +92,21 @@
         var pass = document.getElementById("pwd-reset").value;
         alert(pass);
         document.getElementById("pwd-reset").value=""
+        if(pass=='12345'){
+            var result=confirm('本当にスタンプ帳などをりセットしてもよろしいですか？');
+            if(result){
+                if(window.localStorage){
+                    localStrage.clear();
+                    alert('スタンプ帳
+                }
+            }
+            else{
+                alert('この処理はキャンセルされましt。');
+            }
+        }else
+            alert('パスワードが間違っています。');
+        }
+            
     }); 
 </script>
 </html>
