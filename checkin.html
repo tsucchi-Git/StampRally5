@@ -287,6 +287,7 @@
         } 
        //常時監視中、現在位置の取得が成功したときの処理           
         function successCallback(position) {
+            alert('常時監視の開始');
             var Curlat=Number(position.coords.latitude);
             var Curlng=Number(position.coords.longitude);
             var r=distance(longitude, latitude,Curlng,Curlat);  //現在地から対象地点までの距離(m)
