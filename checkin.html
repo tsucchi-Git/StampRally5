@@ -289,7 +289,7 @@
         function successCallback(position) {
             var Curlat=Number(position.coords.latitude);
             var Curlng=Number(position.coords.longitude);
-            alert(position.coords.latitude+','+ position.coords.longitude);
+            //alert(position.coords.latitude+','+ position.coords.longitude);
             var r=distance(longitude, latitude,Curlng,Curlat);  //現在地から対象地点までの距離(m)
             //現在位置の移動に伴って地図をスライドさせる
             // if(Curlng>=lng_max){lng_max =Number(lng_max)+0.01;lng_min =Number(lng_min)+0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
