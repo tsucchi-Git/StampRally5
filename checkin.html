@@ -270,8 +270,11 @@
               //現在位置の情報を取得するまでの間、画面に作業中であることを表示する。
               var dist=document.getElementById("markerDistance");
               dist.style.marginTop= "20px" ; //トップマージンを指定
+              dist.style.border="solid 2px black"; //境界線の太さと色を指定
+              dist.style.textAlign = "center";  //センタリング
+              dist.style.fontSize="10pt";       //フォントサイズを指定
               dist.textContent= "少しお待ちください。スポットまでの距離の計算中です。";
-              //dist.style.backgroundColor="lightgray"; //背景色を指定
+              dist.style.backgroundColor="lightgray"; //背景色を指定
               //現在位置の連続監視
               watch_id = navigator.geolocation.watchPosition(successCallback);//,errorCallback,position_options);  
             }else{
