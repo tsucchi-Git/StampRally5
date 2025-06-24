@@ -287,15 +287,15 @@
         } 
        //常時監視中、現在位置の取得が成功したときの処理           
         function successCallback(position) {
-            alert('常時監視の開始');
             var Curlat=Number(position.coords.latitude);
             var Curlng=Number(position.coords.longitude);
+            alert(position.coords.latitude+','+ position.coords.longitude);
             var r=distance(longitude, latitude,Curlng,Curlat);  //現在地から対象地点までの距離(m)
             //現在位置の移動に伴って地図をスライドさせる
-            if(Curlng>=lng_max){lng_max =Number(lng_max)+0.01;lng_min =Number(lng_min)+0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
-            if(Curlng<lng_min){lng_min =Number(lng_min)-0.01;lng_max=Number(lng_max)-0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
-            if(Curlat>=lat_max){lat_max =Number(lat_max)+0.01;lat_min =Number(lat_min)+0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
-            if(Curlat<lat_min){lat_min =Number(lat_min)-0.01;lat_max =Number(lat_max)-0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};             
+            // if(Curlng>=lng_max){lng_max =Number(lng_max)+0.01;lng_min =Number(lng_min)+0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
+            // if(Curlng<lng_min){lng_min =Number(lng_min)-0.01;lng_max=Number(lng_max)-0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
+            // if(Curlat>=lat_max){lat_max =Number(lat_max)+0.01;lat_min =Number(lat_min)+0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};
+            // if(Curlat<lat_min){lat_min =Number(lat_min)-0.01;lat_max =Number(lat_max)-0.01;const bounds = L.latLngBounds([lat_min,lng_min],[lat_max,lng_max]);mymap.fitBounds(bounds)};             
 
 
             //現在地を表すマーカーの痕跡をなくして、最新の位置を地図に表示する。
