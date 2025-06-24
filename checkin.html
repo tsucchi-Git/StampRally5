@@ -268,6 +268,7 @@
                           curMarker=null;curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);} else {curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);}        
             if(flag_checkin<0){
               //現在位置の情報を取得するまでの間、画面に作業中であることを表示する。
+              var dist=document.getElementById("markerDistance");
               dist.style.marginTop= "20px" ; //トップマージンを指定
               dist.textContent= "少しお待ちください。スポットまでの距離の計算中です。";
               //dist.style.backgroundColor="lightgray"; //背景色を指定
