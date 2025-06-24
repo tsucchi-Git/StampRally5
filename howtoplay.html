@@ -34,6 +34,9 @@
         margin-top: 10px;
         text-align:center;
       }         /* 遊び方の画像 */
+      .img-checkin{
+        text-align:center;
+      }         /* チェックイン可能ボタンの画像 */
       .title-reset{
         margin-top: 30px; 
         border: 1px dotted yellow;  
@@ -58,17 +61,23 @@
       <p class="img-play">
         <img src="icon/sekihi-stamp.png" width="50%" alt="タイトル画像" >
       <p calss="text-explain">
-      　地図上のグリーンリーフ（緑の葉）は災害伝承碑などの場所を表しています。<br>　いずれかをタップ（クリック）すると、災害伝承碑などの写真と名称が表示されます。<br>
-      　また、現在地からの距離も表示されます。近くまで行けば、チェックインが可能となり、デジタルスタンプがゲットできます。ゲットしているデジタルスタンプは、スタンプ帳で確認できます。<br><br>
+      　地図上のグリーンリーフ（緑の葉）は災害伝承碑などの場所を表しています。<br>　いずれかをタップ（クリック）すると、災害伝承碑などの写真と名称が表示されます。また、現在地からの距離も表示されます。近くまで行けば、チェックインが可能となり、以下のような表示が出てきます。
+      </p>
+      <p class="img-checkin">
+         <img src="icon/checkintap.png"  width="75%" alt="チェックインタップの画像" >
+      </p>
+       <p calss="text-explain"></p>
+      これをタップ（クリック）するとデジタルスタンプがゲットできます。
+      ゲットしているデジタルスタンプは、スタンプ帳で確認できます。<br><br>
       ※注意：<br>
       1)スマートフォンの位置情報へのアクセスを可能にしておいてください。<br>
-      2)使用するスマートフォンが変わると、過去に獲得しているデジタルスタンプは反映されません。
+      2)使用するスマートフォンがかわると、過去にゲットしたデジタルスタンプは反映されません。
       </p>
       <div class="title-apply">応募の方法</div>
       <p class="img-apply">
         <img src="icon/apply.png" width="30%" alt="応募方法" >
       <p calss="text-explain">
-      　スタンプを〇個以上獲得した方には、先着〇〇名様に記念品を差し上げます。<br>　和歌山県土砂災害啓発センターを訪問して、スマートフォンのスタンプ帳を提示してください。
+      　スタンプを〇個以上ゲットした方には、先着〇〇名様に記念品を差し上げます。<br>　和歌山県土砂災害啓発センターを訪問して、スマートフォンのスタンプ帳を提示してください。
 
       </p>
       <div class="title-reset">リセット（管理者用）</div>
@@ -95,7 +104,7 @@
                 if(result){
                     if(window.localStorage){
                         //エリア番号の読み取り
-              　　      let area_no=localStorage.getItem('area_no%');
+                        let area_no=localStorage.getItem('area_no%');
                         alert(area_no);
             		    //現在の訪問記録の読み込み
                          let key_visit='visit_data%' + area_no;
