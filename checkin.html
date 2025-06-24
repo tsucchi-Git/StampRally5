@@ -267,6 +267,10 @@
                           mymap.removeLayer(curMarker);
                           curMarker=null;curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);} else {curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);}        
             if(flag_checkin<0){
+              //現在位置の情報を取得するまでの間、画面に作業中であることを表示する。
+              dist.style.marginTop= "20px" ; //トップマージンを指定
+              dist.textContent= "少しお待ちください。スポットまでの距離の計算中です。";
+              dist.style.backgroundColor="lightgray"; //背景色を指定
               //現在位置の連続監視
               watch_id = navigator.geolocation.watchPosition(successCallback);//,errorCallback,position_options);  
             }else{
