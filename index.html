@@ -61,7 +61,7 @@
             shadowAnchor: [2, 38],  // the same for the shadow [4, 62]
             popupAnchor:  [-3, -65] // point from which the popup should open relative to the iconAnchor [-3, -76]
         });
-        橙の葉
+        //橙の葉
         var orangeIcon = L.icon({
             iconUrl: 'icon/leaf-orange.png',
             shadowUrl: 'icon/leaf-shadow.png',
@@ -190,7 +190,7 @@
 			// 	var selectedIcon=greenIcon;
 			// 	alert('orange' +i);
 			// }
-			L.marker([marker_lat,marker_lng],{icon :greenIcon}).addTo(mymap)
+			L.marker([marker_lat,marker_lng],{icon :orangeIcon}).addTo(mymap)
 		      .on('click',function(e){
 	
 			//遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
