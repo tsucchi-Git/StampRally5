@@ -175,7 +175,11 @@
 			var marker_lat=markerList[i].lat;  //スポットの北緯
 			var marker_lng=markerList[i].lng;  //スポットの東経
 			//alert(markerList[i].lat + ',' + marker_lng);
-			var selectedIcon=greenIcon;
+			if(visit_yn[i]<0){
+				var selectedIcon=greenIcon;
+			]else{
+				var selectedIcon=greenIcon;
+			}
 			L.marker([marker_lat,marker_lng],{icon :selectedIcon}).addTo(mymap)
 		      .on('click',function(e){
 	
