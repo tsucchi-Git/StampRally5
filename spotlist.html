@@ -437,6 +437,11 @@
           var e_number=document.getElementById("number" +i1);e_number.textContent=s_number ;//スポット番号を更新      
           var e_yesno=document.getElementById("get_yn" +i1);e_yesno.textContent=s_yesno ;//スポット番号を更新
           var e_img=document.getElementById("image" +i1);e_img.src='image/' + s_img ;//画像ファイルを更新
+          if(s_yesno_temp<0){
+            e_img.style.color='black';
+          }else{
+            e_img.style.color='red';
+          }
           var e_title=document.getElementById("title" +i1);e_title.textContent="名称：" + s_title ; //名称の更新
           var e_address=document.getElementById("address" +i1);e_address.textContent="住所：" + s_address ; //住所の更新
           var e_address_detail=document.getElementById("address_detail" +i1);e_address_detail.textContent="場所の詳細：" + s_address_detail ; //場所の詳細の更新  
