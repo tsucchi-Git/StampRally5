@@ -184,13 +184,13 @@
 			var marker_lng=markerList[i].lng;  //スポットの東経
 			var markerIcon;
 			//alert(markerList[i].lat + ',' + marker_lng);
-			// if(visit_yn[i]<0){
-			// 	var selectedIcon=greenIcon;
-			// 	alert('green'+i);
-			// ]else{
-			// 	var selectedIcon=greenIcon;
-			// 	alert('orange' +i);
-			// }
+			if(visit_yn[i]<0){
+				var selectedIcon=greenIcon;
+				alert('green'+i);
+			]else{
+				var selectedIcon=greenIcon;
+				alert('orange' +i);
+			}
 			markerIcon=greenIcon
 			L.marker([marker_lat,marker_lng],{icon :markerIcon}).addTo(mymap)
 		      .on('click',function(e){
