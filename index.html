@@ -40,8 +40,6 @@
     <script>
         var explain=document.getElementById("title-explain");
         explain.textContent="グリーンリーフは、災害伝承碑の場所を表しています。いずれかをタップ（クリック）すると、災害伝承碑の写真、名称、住所とともに、現在の場所からの距離が表示されます。一定の距離まで近づくと、チェックイン可能になりデジタルスタンプがゲットできます。ぜひ訪問してみてください。";
- //        explain.style.border="solid 3px red"; //境界線の太さと色を指定
- //        explain.style.textAlign = "left";     //センタリング
            explain.style.fontSize="8pt";       //フォントサイズを指定
  //	   explain.style.fontfamily='Arial';		//フォントの種類を指定
 
@@ -53,6 +51,17 @@
         //緑の葉
         var greenIcon = L.icon({
             iconUrl: 'icon/leaf-green.png',
+            shadowUrl: 'icon/leaf-shadow.png',
+            iconSize:     [25, 60], // size of the icon [38, 95]
+            shadowSize:   [30, 40], // size of the shadow [50, 64]
+            iconAnchor:   [14, 59], // point of the icon which will correspond to marker's 
+            //location [22, 94]
+            shadowAnchor: [2, 38],  // the same for the shadow [4, 62]
+            popupAnchor:  [-3, -65] // point from which the popup should open relative to the iconAnchor [-3, -76]
+        });
+        //緑の葉
+        var orangeIcon = L.icon({
+            iconUrl: 'icon/leaf-orange.png',
             shadowUrl: 'icon/leaf-shadow.png',
             iconSize:     [25, 60], // size of the icon [38, 95]
             shadowSize:   [30, 40], // size of the shadow [50, 64]
@@ -166,7 +175,8 @@
 			var marker_lat=markerList[i].lat;  //スポットの北緯
 			var marker_lng=markerList[i].lng;  //スポットの東経
 			//alert(markerList[i].lat + ',' + marker_lng);
-			L.marker([marker_lat,marker_lng],{icon : greenIcon}).addTo(mymap)
+			var selectedIcon=greenIcon;
+			L.marker([marker_lat,marker_lng],{icon :selectedIcon}).addTo(mymap)
 		      .on('click',function(e){
 	
 			//遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
