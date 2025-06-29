@@ -275,7 +275,12 @@
             //地図の表示範囲を設定する（スポットと現在位置のマーカーがすべて表示される）関数の呼び出し
             MapDisplayBoundCheckin(latitude,longitude,curlatitude,curlongitude);            
             //マップにスポットのマーカーをつける
-            L.marker([latitude,longitude],{icon : greenIcon}).addTo(mymap)
+        		if(visit_yn[i]<0){
+      				markerIcon=greenIcon;
+      			}else{
+      				markerIcon=orangeIcon;
+      			}
+            L.marker([latitude,longitude],{icon : markerIcon}).addTo(mymap)
             //前のページからパラメータとして渡された位置に現在地のマーカーを付ける
             if (curMarker) {
                           mymap.removeLayer(curMarker);
