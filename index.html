@@ -128,12 +128,12 @@
 		      let json_string_visit=JSON.stringify(visit_yn); 
 		      localStorage.setItem(key_visit,json_string_visit);
 		    }
-		   //  else{
-		   //    //ローカルストレージからキー「vsit_data」で基礎データを読み込み配列visit_ynに格納
-     //      		let json_visit=localStorage.getItem(key_visit);
-     //      		visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
-	  		// alert(visit_yn);
-		   //  }
+		    else{
+		      //ローカルストレージからキー「vsit_data」で基礎データを読み込み配列visit_ynに格納
+          		let json_visit=localStorage.getItem(key_visit);
+          		visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
+	  		alert(visit_yn);
+		    }
 		  }
 		  else
 		  {
