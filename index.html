@@ -132,6 +132,7 @@
 		      //ローカルストレージからキー「vsit_data」で基礎データを読み込み配列visit_ynに格納
           		let json_visit=localStorage.getItem(key_visit);
           		visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
+	  alert(visit_yn);
 		    }
 		  }
 		  else
@@ -143,7 +144,6 @@
 		      attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
 		  }).addTo(mymap);
 		  //マーカーを表示する関数の呼び出し
-	  alert(visit_yn);
 		  MarkerShow(); 
 		  //現在地表示ボタンを作成
 		  L.easyButton('<img src="icon/position.png">', function(btn, easymap){
