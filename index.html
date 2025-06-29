@@ -44,7 +44,7 @@
  //	   explain.style.fontfamily='Arial';		//フォントの種類を指定
 
        
-	var visit_yn[];
+	var visit_yn;
 	var Curlat;  //現在地の緯度
         var Curlng;  //現在地の経度
 	//Var MarkerList;
@@ -119,7 +119,7 @@
 			}
 		    }
 		    //「visit_data」というキーでローカルストレージが使われている場合は何もしない。使われていない場合は、すべてのスポットを未訪問として、各スポットへの訪問を無（初期設定）としてJSONデータに変換し、vist_ysという配列に格納する。
-		    let visit_yn=[];
+		    //let visit_yn=[];
 		    if (flag<0){
 		      for(i=0; i < markerList.length; i++){
 			  visit_yn.push(-1);
