@@ -143,6 +143,7 @@
 		      attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
 		  }).addTo(mymap);
 		  //マーカーを表示する関数の呼び出し
+	  alert(visit_yn);
 		  MarkerShow(); 
 		  //現在地表示ボタンを作成
 		  L.easyButton('<img src="icon/position.png">', function(btn, easymap){
@@ -178,7 +179,6 @@
 		      location.reload();
 		  }
 		  function MarkerShow() {
-			  alert(visit_yn);
 		      for (var i = 0; i < markerList.length; i++) {
 			var marker_lat=markerList[i].lat;  //スポットの北緯
 			var marker_lng=markerList[i].lng;  //スポットの東経
