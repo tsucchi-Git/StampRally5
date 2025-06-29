@@ -182,6 +182,7 @@
 		      for (var i = 0; i < markerList.length; i++) {
 			var marker_lat=markerList[i].lat;  //スポットの北緯
 			var marker_lng=markerList[i].lng;  //スポットの東経
+			var markerIcon;
 			//alert(markerList[i].lat + ',' + marker_lng);
 			// if(visit_yn[i]<0){
 			// 	var selectedIcon=greenIcon;
@@ -190,7 +191,8 @@
 			// 	var selectedIcon=greenIcon;
 			// 	alert('orange' +i);
 			// }
-			L.marker([marker_lat,marker_lng],{icon :greenIcon}).addTo(mymap)
+			markerIcon=greenIcon
+			L.marker([marker_lat,marker_lng],{icon :markerIcon}).addTo(mymap)
 		      .on('click',function(e){
 	
 			//遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
