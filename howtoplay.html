@@ -49,6 +49,9 @@
         font-size:150%;
         font-family: Arial;
       }
+       .text-explain{
+        font-family: Arial;
+      }
     </style>
   </head>
   <body>
@@ -80,18 +83,18 @@
       <div class="title-apply">応募の方法</div>
       <p class="img-apply">
         <img src="icon/apply.png" width="30%" alt="応募方法" >
-      <p calss="text-explain">
+      <p class="text-explain">
       　スタンプを〇個以上ゲットした方には、先着〇〇名様に記念品を差し上げます。<br>　和歌山県土砂災害啓発センターを訪問して、スマートフォンのスタンプ帳を提示してください。
 
       </p>
       <div class="title-reset">リセット（管理者用）</div>
-      <p calss="text-explain">
+      <p class="text-explain">
       　すでにゲットしているすべてのスタンプを破棄してリセットします。一旦リセットすると復元はできません。
       </p>
       <form>
-        <label for="textForm">パスワード: </label>
-        <input type="text" id="textForm">
-        <button id="button">実行</button>
+        <label for="textForm" class="text-explain">パスワード: </label>
+        <input type="text" id="textForm" class="text-explain">
+        <button id="button" class="text-explain">実行</button>
       </form>
 <script>
     // //以下は、ローカルストレージをすべてクリアするための管理用コード
