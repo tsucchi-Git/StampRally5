@@ -132,7 +132,7 @@
 		      //ローカルストレージからキー「vsit_data」で基礎データを読み込み配列visit_ynに格納
           		let json_visit=localStorage.getItem(key_visit);
           		visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
-	  		alert(visit_yn);
+	  		//alert(visit_yn);
 		    }
 		  }
 		  else
@@ -191,7 +191,6 @@
 				markerIcon=orangeIcon;
 				//alert('orange' +i);
 			}
-			markerIcon=greenIcon
 			L.marker([marker_lat,marker_lng],{icon :markerIcon}).addTo(mymap)
 		      .on('click',function(e){
 	
