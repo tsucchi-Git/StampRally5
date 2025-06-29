@@ -12,6 +12,12 @@
         margin-top: 13px;
         width:100%;
         }         /* タイトル画像の横幅をウィンドウサイズにする */
+       .explain{
+	        border:solid 3px red; //境界線の太さと色を指定
+	        textAlign:left;   //左寄せ
+	        fontSize:8pt;       //フォントサイズを指定
+		font-family:Arial  //フォントの種類を指定
+       }       
     </style>
     <link rel='stylesheet' href='css/easy-button.css'/>
     <link rel='stylesheet' href='css/menu.css'/>
@@ -29,16 +35,16 @@
       <img src="icon/title.jpg" alt="タイトル画像">
     </p>
     <div id="mapid_main"></div>  <!-- 地図のIDを設定 -->
-    <p id="title-explain">
+    <p id="title-explain" class="explain">
     </p>
 
     <script>
         var explain=document.getElementById("title-explain");
         explain.textContent="グリーンリーフは、災害伝承碑の場所を表しています。いずれかをタップ（クリック）すると、災害伝承碑の写真、名称、住所とともに、現在の場所からの距離が表示されます。一定の距離まで近づくと、チェックイン可能になりデジタルスタンプがゲットできます。ぜひ訪問してみてください。";
-        explain.style.border="solid 3px red"; //境界線の太さと色を指定
-        explain.style.textAlign = "left";     //センタリング
-        explain.style.fontSize="8pt";       //フォントサイズを指定
-	explain.font-family="Arial";		//フォントの種類を指定
+ //        explain.style.border="solid 3px red"; //境界線の太さと色を指定
+ //        explain.style.textAlign = "left";     //センタリング
+ //        explain.style.fontSize="8pt";       //フォントサイズを指定
+	// explain.font-family="Arial";		//フォントの種類を指定
 
        var Curlat;  //現在地の緯度
        var Curlng;  //現在地の経度
