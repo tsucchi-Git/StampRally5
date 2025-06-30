@@ -360,6 +360,10 @@
                     dist.removeEventListener('click', Stamp)
                     //現在地の連続監視機能を停止
                     navigator.geolocation.clearWatch(watch_id); 
+                    //スポットのマーカーをグリーンからオレンジのものに差し替える
+                    if (spotMarker) {
+                    mymap.removeLayer(spotMarker);
+                    spotMarker=null;spotMarker =L.marker([latitude, longitude], {icon: orangeIcon}).addTo(mymap);} else {spotMarker =L.marker([latitude, longitude], {icon: orangeIcon}).addTo(mymap);}  
                     //チェックインしたスポットの画像を「済」のマークが付いた写真に差し替える。
                     for(i=0;i<nspot;i++){
                       i1=i+1;
