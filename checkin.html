@@ -133,7 +133,8 @@
             shadowAnchor: [2, 22],
           });
     //現在地と対象地との距離を常時計測し表示する
-     var curMarker;   
+     var curMarker;   //現在位置のマーカーを代入する変数
+     var spotMarker;  //スポットのマーカーを代入する変数
     // alert(curlatitude + ',' + curlongitude);
     // alert(latitude + ',' + longitude);
       if(window.localStorage){
@@ -280,7 +281,10 @@
       			}else{
       				markerIcon=orangeIcon;
       			}
-            L.marker([latitude,longitude],{icon : markerIcon}).addTo(mymap)
+            if (spotMarker) {
+                          mymap.removeLayer(spotMarker);
+                          spotMarker=null;spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);} else {spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);}        
+            //L.marker([latitude,longitude],{icon : markerIcon}).addTo(mymap)
             //前のページからパラメータとして渡された位置に現在地のマーカーを付ける
             if (curMarker) {
                           mymap.removeLayer(curMarker);
