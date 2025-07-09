@@ -42,6 +42,11 @@
     overflow-y:scroll;
     font-family: Arial;
   }
+  .tomap{
+    margin-top:5px;
+    text-align: center; /* 横方向の中央揃え */
+    width: 65%;
+  }
  </style>
  <body>
   <nav>
@@ -77,6 +82,9 @@
   <div class="explanation">
     <p id="explain" ></p> 
   </div> 
+  <p class="img-tomap">
+     <img id="tomap" alt="地図へ" >
+  </p>
   <script>
       //ローカルストレージからデータ（タイトル、画像ファイル名、住所、場所の詳細、年代、説明、訪問の有無）の取り出し
       if (window.localStorage){
@@ -110,6 +118,8 @@
       } else {
         alert('ローカルストレージは使えません')
       };
+        var tomap_img=document.getElementById("tomap");
+        tomap_img.src='icon/map_butoon.png'; 
     </script>
 </body>
 </html>
