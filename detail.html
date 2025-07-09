@@ -93,7 +93,13 @@
         const split_str=str.split(".");
         var file_name1=str;
         var file_name2=split_str[0] + "_high." + split_str[1];
-        var file_yn='image/' + file_name2;  //高解像度のファイルをフォルダを含めて代入
+        var img_high=new Image();
+        img_high.src='image/' + file_name2;
+        if(img_high.width>0){
+          alert(file_name2 + 'は存在します')
+        }else{
+          alert(file_name2 + 'は存在しません')
+        }
         //var fsize=file_yn.size; //ファイルサイズを取得
         //alert('ファイルサイズ:' + fsize!);    
         // if(fsize!=-1){
