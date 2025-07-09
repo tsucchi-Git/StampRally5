@@ -425,6 +425,8 @@
           }else{
             s_yesno='済'
           }
+          let s_lat=array[i].lat              //スポットの北緯を変数に代入
+          let s_lng=array[i].lng              //スポットの東経を変数に代入
           let s_img=array[i].file;
           let s_title=array[i].name;
           let s_address=array[i].address;
@@ -454,7 +456,7 @@
           button_detail.addEventListener('click', function(){spot_jamp_detail(i)});
         function spot_jamp_detail(i){
             let s_explanation=array[i].exp;//スポットに関する説明を変数に代入
-            let spot_array=[s_title,s_img,s_address,s_address_detail,s_era,s_explanation,s_yesno];//詳細ボタンがクリックされたときに、当該スポットのデータの一部を配列に格納
+            let spot_array=[s_lat,s_lng,s_title,s_img,s_address,s_address_detail,s_era,s_explanation,s_yesno];//詳細ボタンがクリックされたときに、当該スポットのデータの一部を配列に格納
             //ローカルストレージに「spot-selected」のキーで選択されたスポットのデータ配列を保存
             if(window.localStorage){
               //配列をJSONデータに返還し、json_stringという変数に一括代入
