@@ -98,7 +98,7 @@
         var fsize=file_yn.fileSize; //ファイルサイズを取得
         if(fsize!=-1){
           var e_img=document.getElementById("image2");e_img.src='image/' + file_name1 ;//画像ファイルを更新
-        }else
+        }else{
           var e_img=document.getElementById("image2");e_img.src='image/' + file_name2 ;//高解像の画像ファイルを更新
         }
         var e_title=document.getElementById("title");e_title.textContent="名称：" + s_title ; //名称の更新
