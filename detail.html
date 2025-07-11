@@ -123,9 +123,23 @@
         //マップボタンを押したら呼び出される関数
         function get_location_gps(){
           alert('通過1');
+          navigator.geolocation.getCurrentPosition(
+              successCallback_gps,
+              errorCallback_gps,
+              {
+                //何ミリ秒以前にキャッシュされた位置を返してもよいか
+                //0を指定すると現在の位置情報を取得する
+                maximumAge:0,
+                //位置情報取得に要してよい最大時間(ミリ秒)
+                timeout:3000,
+                //true:正確な情報が欲しい場合  false:正確でなくてよい場合
+                enableHighAccuracy:false,
+              }
+            );
         }
         //緯度経度の取得が成功した時に呼び出される関数
         function successCallback_gps(pos){
+          alert('通過2');
           const Curlat = position.coords.latitude;
           const Curlng = position.coords.longitude;
           alert('緯度:' + Curlat +', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
