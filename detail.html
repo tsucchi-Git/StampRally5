@@ -121,28 +121,47 @@
         var tomap_img=document.getElementById("tomap");
         tomap_img.src='icon/map-button.png'; 
         //「地図へ」ボタンがクリックされたとき、現在地の緯度経度を取得し、チェックインのページに遷移する。
-        tomap_img.onclick=function(){
-            if (navigator.geolocation) {
-              alert('現在地取得');
-              navigator.geolocation.getCurrentPosition(
-                (position) => {
-                  const Curlat = position.coords.latitude;
-                  const Curlng = position.coords.longitude;
-                  alert('緯度:' + Curlat +', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
-                  //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
-                  var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
-                  alert(url);
-                  window.location.href=url;
-                  alert('ページ遷移完了');
-                },
-                (error) => {
-                  alert("位置情報の取得に失敗しました:" +  error.message);
-                }
-              );
-            } else {
-              alert("このブラウザは位置情報取得をサポートしていません。");
-            }
-        };
+        tomap_img.onclick='get_location_gps()';
+        //マップボタンを押したら呼び出される関数
+        function get_location_gps(){
+          if(navigator.geolocation){
+            //現在の位置情報取得。正常に取得するとsuccessCallback_gpsがコールバックされる
+            navigator.geolocation.getCurrentPosition(
+              //成功時に呼ばれる関数
+              successCallback_gps,
+              //敗時に呼ばれる関数
+              errorCallback_gps,
+              {
+                //何ミリ秒以前にキャッシュされた位置を返してもよいか
+                //0を指定すると現在の位置情報を取得する
+                maximumAge:0,
+                //位置情報取得に要してよい最大時間(ミリ秒)
+                timeout:3000,
+                //true:正確な情報が欲しい場合  false:正確でなくてよい場合
+                enableHighAccuracy:false,
+              }
+            );
+          }else{
+            //navigator.geolocation()メソッドが使えない
+            alert('この端末では位置情報を取得できません。');
+          }
+        }
+        //緯度経度の取得が成功した時に呼び出される関数
+        function successCallback_gps(pos){
+          const Curlat = position.coords.latitude;
+          const Curlng = position.coords.longitude;
+          alert('緯度:' + Curlat +', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
+          //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
+          var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
+          alert(url);
+          window.location.href=url;
+          alert('ページ遷移完了');
+        }
+        //失敗した時に呼び出される関数
+        function errorCallback_gps(error){
+          //エラー内容を表示する
+          alert(error.message);
+        }
     </script>
 </body>
 </html>
