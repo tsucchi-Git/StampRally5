@@ -93,7 +93,7 @@
         key_select="selected_spot%" + area_no
         let json=localStorage.getItem(key_select); //ローカルストレージからキー「selected-spot%地域番号」で保存したデータを取得
         let spot_array=JSON.parse(json);  //取得したJSONデータを配列に変換し、配列名をspot_array（任意）とする
-        var [s_lat,s_lng,s_title,s_img,s_address,s_address_detail,s_era,s_explanation,s_yesno]=spot_array; //配列の要素を変数に代入
+        var [s_lat,s_lng,s_title,s_img,s_address,s_address_detail,s_era,s_explanation,s_yesno,s_flag]=spot_array; //配列の要素を変数に代入
         //alert('マーカー:' + s_lat + ',' + s_lng);
         //alert(s_title + ',' + s_img  + ',' + s_address + ',' + s_address_detail + ',' + s_era + ',' + s_explanation + ',' + s_yesno);
         //高解像度の画像ある場合は、これを表示する。
@@ -135,27 +135,29 @@
           //       enableHighAccuracy:false,
           //     }
           //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
-          
-          var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + s_lat + "&clng=" + s_lng ;
-          alert(url);
-          window.location.href=url;
+          if(s_flag==1){
+            history.back ();
+          }else{
+            var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + 0 + "&clng=" + 0 ;
+            alert(url);
+            window.location.href=url;
           //);
         }
         //緯度経度の取得が成功した時に呼び出される関数
-        function successCallback_gps(pos){
-          const Curlat = pos.coords.latitude;
-          const Curlng = pos.coords.longitude;
-          //alert('緯度:' + Curlat + ', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
-          //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
-          var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
-          alert(url);
-          window.location.href=url;
-        }
-        //失敗した時に呼び出される関数
-        function errorCallback_gps(error){
-          //エラー内容を表示する
-          alert(error.message);
-        }
+        // function successCallback_gps(pos){
+        //   const Curlat = pos.coords.latitude;
+        //   const Curlng = pos.coords.longitude;
+        //   //alert('緯度:' + Curlat + ', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
+        //   //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
+        //   var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
+        //   alert(url);
+        //   window.location.href=url;
+        // }
+        // //失敗した時に呼び出される関数
+        // function errorCallback_gps(error){
+        //   //エラー内容を表示する
+        //   alert(error.message);
+        // }
     </script>
 </body>
 </html>
