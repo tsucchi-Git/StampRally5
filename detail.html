@@ -131,7 +131,7 @@
                 //0を指定すると現在の位置情報を取得する
                 maximumAge:0,
                 //位置情報取得に要してよい最大時間(ミリ秒)
-                timeout:3000,
+                timeout:6000,
                 //true:正確な情報が欲しい場合  false:正確でなくてよい場合
                 enableHighAccuracy:false,
               }
@@ -142,7 +142,7 @@
           alert('通過2');
           const Curlat = pos.coords.latitude;
           const Curlng = pos.coords.longitude;
-          alert('緯度:' + Curlat +', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
+          alert('緯度:' + Curlat + ', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
           //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
           var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
           alert(url);
