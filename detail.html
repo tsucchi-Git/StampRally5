@@ -82,7 +82,7 @@
     <p id="explain" ></p> 
   </div> 
   <p class="img-tomap">
-     <img id="tomap" width="20%" alt="地図へ" >
+     <img id="tomap" onclick="get_location_gps()" width="20%" alt="地図へ" >
   </p>
   <script>
       //ローカルストレージからデータ（タイトル、画像ファイル名、住所、場所の詳細、年代、説明、訪問の有無）の取り出し
@@ -120,8 +120,6 @@
       };
         var tomap_img=document.getElementById("tomap");
         tomap_img.src='icon/map-button.png'; 
-        //「地図へ」ボタンがクリックされたとき、現在地の緯度経度を取得し、チェックインのページに遷移する。
-        tomap_img.onclick="get_location_gps()";
         //マップボタンを押したら呼び出される関数
         function get_location_gps(){
           alert('通過1');
