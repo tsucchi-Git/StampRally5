@@ -122,19 +122,24 @@
         tomap_img.src='icon/map-button.png'; 
         //マップボタンを押したら呼び出される関数
         function get_location_gps(){
-          navigator.geolocation.getCurrentPosition(
-              successCallback_gps,
-              errorCallback_gps,
-              {
-                //何ミリ秒以前にキャッシュされた位置を返してもよいか
-                //0を指定すると現在の位置情報を取得する
-                maximumAge:0,
-                //位置情報取得に要してよい最大時間(ミリ秒)
-                timeout:10000,
-                //true:正確な情報が欲しい場合  false:正確でなくてよい場合
-                enableHighAccuracy:false,
-              }
-            );
+          // navigator.geolocation.getCurrentPosition(
+          //     successCallback_gps,
+          //     errorCallback_gps,
+          //     {
+          //       //何ミリ秒以前にキャッシュされた位置を返してもよいか
+          //       //0を指定すると現在の位置情報を取得する
+          //       maximumAge:0,
+          //       //位置情報取得に要してよい最大時間(ミリ秒)
+          //       timeout:10000,
+          //       //true:正確な情報が欲しい場合  false:正確でなくてよい場合
+          //       enableHighAccuracy:false,
+          //     }
+          //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
+          
+          var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + s_lat + "&clng=" + s_lng ;
+          alert(url);
+          window.location.href=url;
+          //);
         }
         //緯度経度の取得が成功した時に呼び出される関数
         function successCallback_gps(pos){
