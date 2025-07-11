@@ -121,9 +121,10 @@
         var tomap_img=document.getElementById("tomap");
         tomap_img.src='icon/map-button.png'; 
         //「地図へ」ボタンがクリックされたとき、現在地の緯度経度を取得し、チェックインのページに遷移する。
-        tomap_img.onclick='get_location_gps()';
+        tomap_img.onclick="get_location_gps()";
         //マップボタンを押したら呼び出される関数
         function get_location_gps(){
+          alert('通過1');
           if(navigator.geolocation){
             //現在の位置情報取得。正常に取得するとsuccessCallback_gpsがコールバックされる
             navigator.geolocation.getCurrentPosition(
