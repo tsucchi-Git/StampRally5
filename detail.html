@@ -140,8 +140,8 @@
         //緯度経度の取得が成功した時に呼び出される関数
         function successCallback_gps(pos){
           alert('通過2');
-          const Curlat = position.coords.latitude;
-          const Curlng = position.coords.longitude;
+          const Curlat = pos.coords.latitude;
+          const Curlng = pos.coords.longitude;
           alert('緯度:' + Curlat +', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
           //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
           var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
