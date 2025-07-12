@@ -290,7 +290,7 @@
               spotMarker=null;spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);} else {spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);}        
             //L.marker([latitude,longitude],{icon : markerIcon}).addTo(mymap)
             //前のページからパラメータとして渡された位置に現在地のマーカーを付ける（ただし、どちらが0であれば、表示しない）
-            if(curlatitude=latitude && curlongitude=longitude){
+            if(curlatitude==latitude && curlongitude==longitude){
                 if (curMarker) {
                      mymap.removeLayer(curMarker);
                 　   //curMarker=null;curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);
