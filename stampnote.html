@@ -56,9 +56,7 @@
     <!-- <li><a href=”#”>Blog</a></li> -->
     </ul>
    </nav>
-  <div class="page-title">
-    スタンプ帳
-  </div>
+  <div id="title" class="page-title"></div>
   <div class="title-img">
     <img src="icon/stamp_rally.png" width="20%">
   </div>
@@ -195,6 +193,11 @@
           let json_visit=localStorage.getItem(key_visit);
           visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
           let _count=0
+          var title_text=document.getElementById("title");
+          if(area_no==5){
+            var area_text="～東牟婁・新宮編～
+            title_text.context=スタンプ帳" + area_text;
+          }
           for(i=0;i<array.length;i++){
               i1=i+1;
               var e_spot=document.getElementById("spot" +i1);
