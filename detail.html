@@ -82,7 +82,7 @@
     <p id="explain" ></p> 
   </div> 
   <p class="img-tomap">
-     <img id="tomap" onclick="get_location_gps()" width="20%" alt="地図へ" >
+     <img id="tomap" onclick="jump_to_checkin()" width="20%" alt="地図へ" >
   </p>
   <script>
       //ローカルストレージからデータ（タイトル、画像ファイル名、住所、場所の詳細、年代、説明、訪問の有無）の取り出し
@@ -121,19 +121,7 @@
         var tomap_img=document.getElementById("tomap");
         tomap_img.src='icon/map-button.png'; 
         //マップボタンを押したら呼び出される関数
-        function get_location_gps(){
-          // navigator.geolocation.getCurrentPosition(
-          //     successCallback_gps,
-          //     errorCallback_gps,
-          //     {
-          //       //何ミリ秒以前にキャッシュされた位置を返してもよいか
-          //       //0を指定すると現在の位置情報を取得する
-          //       maximumAge:0,
-          //       //位置情報取得に要してよい最大時間(ミリ秒)
-          //       timeout:10000,
-          //       //true:正確な情報が欲しい場合  false:正確でなくてよい場合
-          //       enableHighAccuracy:false,
-          //     }
+        function jump_to_checkin(){
           //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
           if(s_flag==1){
             //チェックインのページから詳細ページにアクセスした場合
@@ -143,26 +131,10 @@
             var clat=s_lat;
             var clng=s_lng;
             var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + clat + "&clng=" + clng ;
-            alert(url);
+            //alert(url);
             window.location.href=url;
           }
-          //);
         }
-        //緯度経度の取得が成功した時に呼び出される関数
-        // function successCallback_gps(pos){
-        //   const Curlat = pos.coords.latitude;
-        //   const Curlng = pos.coords.longitude;
-        //   //alert('緯度:' + Curlat + ', 経度:' + Curlng + 'マーカー緯度:' + s_lat + ', マーカー経度:' + s_lng);
-        //   //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
-        //   var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + Curlat + "&clng=" + Curlng ;
-        //   alert(url);
-        //   window.location.href=url;
-        // }
-        // //失敗した時に呼び出される関数
-        // function errorCallback_gps(error){
-        //   //エラー内容を表示する
-        //   alert(error.message);
-        // }
     </script>
 </body>
 </html>
