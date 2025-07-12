@@ -277,8 +277,6 @@
                   attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
               }).addTo(mymap);
             mymap.locate({setView: false, maxZoom: 16, timeout: 20000}); 
-            //地図の表示範囲を設定する（スポットと現在位置のマーカーがすべて表示される）関数の呼び出し
-            MapDisplayBoundCheckin(latitude,longitude,curlatitude,curlongitude);            
             //マップにスポットのマーカーをつける
         		if(flag_checkin<0){
       				markerIcon=greenIcon;
@@ -300,6 +298,8 @@
                   //curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);
                 } 
             }
+            //地図の表示範囲を設定する（スポットと現在位置のマーカーがすべて表示される）関数の呼び出し
+            MapDisplayBoundCheckin(latitude,longitude,curlatitude,curlongitude);         
             if(flag_checkin<0){
               //現在位置の情報を取得するまでの間、画面に作業中であることを表示する。
               var dist=document.getElementById("markerDistance");
