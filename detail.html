@@ -136,10 +136,12 @@
           //     }
           //遷移するページのURLの後にスポットの経緯度と現在地の経緯度を付ける
           if(s_flag==1){
+            //チェックインのページから詳細ページにアクセスした場合
             history.back ();
           }else{
-            clat=s_lat;
-            clng=s_lng;
+            //スポットリストあるいはスタンプ帳のページから詳細ページにアクセスした場合
+            var clat=s_lat;
+            var clng=s_lng;
             var url= "checkin.html?lat=" + s_lat + "&lng=" + s_lng + "&clat=" + clat + "&clng=" + clng ;
             alert(url);
             window.location.href=url;
