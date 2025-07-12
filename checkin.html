@@ -286,16 +286,18 @@
       				markerIcon=orangeIcon;
       			}
             if (spotMarker) {
-                          mymap.removeLayer(spotMarker);
-                          spotMarker=null;spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);} else {spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);}        
+              mymap.removeLayer(spotMarker);
+              spotMarker=null;spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);} else {spotMarker =L.marker([latitude, longitude], {icon: markerIcon}).addTo(mymap);}        
             //L.marker([latitude,longitude],{icon : markerIcon}).addTo(mymap)
             //前のページからパラメータとして渡された位置に現在地のマーカーを付ける（ただし、どちらが0であれば、表示しない）
             if(curlatitude!=0 && curlongitude!=0){
+                curlatitude=latitude;
+                curlongitude=longitude;
                 if (curMarker) {
                      mymap.removeLayer(curMarker);
-                　   curMarker=null;curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);
+                　   //curMarker=null;curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);
                 } else {
-                  curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);
+                  //curMarker =L.marker([curlatitude, curlongitude], {icon: curIcon}).addTo(mymap);
                 } 
             }
             if(flag_checkin<0){
