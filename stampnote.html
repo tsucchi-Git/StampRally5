@@ -193,11 +193,30 @@
           let json_visit=localStorage.getItem(key_visit);
           visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
           let _count=0
+          //タイトル
           var title_text=document.getElementById("title");
-          if(area_no==5){
-            var area_text="～東牟婁・新宮編～";
-            title_text.textContent="スタンプ帳" + area_text;
+          switch (area_no){
+            case 1：
+              var area_text="～紀の川流域編～"; 
+              break;
+            case 2：
+              var area_text="～有田川流域編～"; 
+              break;
+            case 3：
+              var area_text="～日高川編～"; 
+              break;
+            case 4：
+              var area_text="～田辺市・西牟婁編～"; 
+              break;
+            case 5：
+              var area_text="～東牟婁・新宮編～"; 
+              break;
+            default:
+              var area_text=""; 
+              break;
           }
+          title_text.textContent="スタンプ帳" + area_text;
+          //各スポットの表示
           for(i=0;i<array.length;i++){
               i1=i+1;
               var e_spot=document.getElementById("spot" +i1);
