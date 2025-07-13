@@ -43,9 +43,6 @@
         var explain=document.getElementById("title-explain");
         explain.textContent="グリーンリーフは、災害伝承碑などの場所を表しています。訪問・チェックインするとオレンジ色に変わります。いずれかをタップすると、災害伝承碑などの写真、名称、住所とともに、現在の場所からの距離が表示されます。一定の距離まで近づくと、チェックイン可能になりデジタルスタンプがゲットできます。ぜひ訪問してみてください。";
            explain.style.fontSize="8pt";       //フォントサイズを指定
- //	   explain.style.fontfamily='Arial';		//フォントの種類を指定
-
-       
 	var visit_yn;
 	var Curlat;  //現在地の緯度
         var Curlng;  //現在地の経度
@@ -84,7 +81,7 @@
 			          iconAnchor: [15, 30],
 			          shadowAnchor: [2, 22],
 		          });
-          //災害伝承碑基礎データの読み込み、その後のすべての実行する。
+         //災害伝承碑基礎データの読み込み、その後のすべての実行する。
             //urlからデータを読み込む
               fetch('json/marker_5.json')
             //データを受け取って、加工・成形
