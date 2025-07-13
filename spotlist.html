@@ -52,7 +52,7 @@
     <!-- <li><a href=”#”>Blog</a></li> -->
     </ul>
    </nav>
-  <div class="page-title">スポットリスト</div>
+  <div id="title" class="page-title"></div>
   <table border="1" >
     <tbody>
       <!-- 1スポット目 -->
@@ -394,6 +394,23 @@
           key_visit="visit_data%" +area_no;
           let json_visit=localStorage.getItem(key_visit);
           visit_yn=JSON.parse(json_visit); //[-1,-1,-1,-1,-1,-1]
+          //タイトル
+          var title_text=document.getElementById("title");
+          if(area_no==1){
+              var area_text="～紀の川流域編～"; 
+          } else if(area_no==2){ 
+              var area_text="～有田川流域編～"; 
+          } else if(area_no==3){ 
+              var area_text="～日高川流域編～"; 
+          } else if(area_no==4){ 
+              var area_text="～田辺市・西牟婁編～"; 
+          } else if(area_no==5){ 
+              var area_text="～東牟婁・新宮編～"; 
+          } else{ 
+              var area_text=""; 
+          }
+          title_text.textContent="スポットリスト" + area_text;
+          //各スポットの表示
           //関数spotshowの呼び出し
           spot_show(array,visit_yn);
         }
@@ -402,20 +419,6 @@
       }
       //スポット一覧を表示する
       function spot_show(array,visit_yn){
-        //すべてのスポットの「名称」と「訪問の有無」をローカルストレージに保存（キーは「get-yesno」）→スタンプ帳用
-        //     let spot_array_all=[array[0].name,array[0].yn];
-        //     for(let i=1 ;i<array.length ;i++){
-        //     spot_array_all.push(array[i].name);spot_array_all.push(array[i].yn)
-        // }
-        // //各スポットが訪問済みか否かのデータをローカルストレージから読み込む
-        // if(window.localStorage){
-        //       let json_string=JSON.stringify(spot_array_all);   //配列をJSONデータに返還し、json_stringという変数に一括代入
-        //       localStorage.setItem('get-yesno',json_string)
-        //     }
-        //     else
-        //     {
-        //       alert('ローカルストレージは使えません');
-        //     }
         //ウェブページへの書き出し  
         for(let i=0 ;i<array.length ;i++){
           let s_number=array[i].id;
